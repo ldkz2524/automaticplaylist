@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17BBFA9F-4BEF-4079-8FB3-8106DCEDBBF9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dongkeun.AutomaticPlaylist.TestBench</RootNamespace>
+    <AssemblyName>Dongkeun.AutomaticPlaylist.TestBench</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dongkeun.AutomaticPlaylist.DataTypes\Dongkeun.AutomaticPlaylist.DataTypes.csproj">
+      <Project>{aa52fa2d-8b43-4bac-9352-e4d782952131}</Project>
+      <Name>Dongkeun.AutomaticPlaylist.DataTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dongkeun.AutomaticPlaylist.Helper\Dongkeun.AutomaticPlaylist.Helper.csproj">
+      <Project>{20ba3f12-090d-405b-9e63-d12559239b29}</Project>
+      <Name>Dongkeun.AutomaticPlaylist.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dongkeun.AutomaticPlaylist.Log\Dongkeun.AutomaticPlaylist.Log.csproj">
+      <Project>{8fffdd79-3c0c-4de9-b55b-28d100a398b5}</Project>
+      <Name>Dongkeun.AutomaticPlaylist.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dongkeun.AutomaticPlaylist.NaverCrawler\Dongkeun.AutomaticPlaylist.Crawler.Naver.csproj">
+      <Project>{06a55cad-b698-49ba-b939-fa72ed687403}</Project>
+      <Name>Dongkeun.AutomaticPlaylist.Crawler.Naver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dongkeun.AutomaticPlaylist.Parser.Naver\Dongkeun.AutomaticPlaylist.Parser.Naver.csproj">
+      <Project>{00e3ffa8-2623-48f1-866a-d6375a9fc214}</Project>
+      <Name>Dongkeun.AutomaticPlaylist.Parser.Naver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dongkeun.AutomaticPlaylist.Parser.Youtube\Dongkeun.AutomaticPlaylist.Parser.Youtube.csproj">
+      <Project>{0d75127c-8084-462b-bd52-eb49b12cb14e}</Project>
+      <Name>Dongkeun.AutomaticPlaylist.Parser.Youtube</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dongkeun.AutomaticPlaylist.Retriever.Naver\Dongkeun.AutomaticPlaylist.Retriever.Naver.csproj">
+      <Project>{8e5ec643-7c15-4200-8a83-fa8daf22228f}</Project>
+      <Name>Dongkeun.AutomaticPlaylist.Retriever.Naver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dongkeun.AutomaticPlaylist.Retriever.Youtube\Dongkeun.AutomaticPlaylist.Retriever.Youtube.csproj">
+      <Project>{962c1f25-07b1-47ae-be8d-e1bf24600427}</Project>
+      <Name>Dongkeun.AutomaticPlaylist.Retriever.Youtube</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dongkeun.AutomaticPlaylist\Dongkeun.AutomaticPlaylist.Crawler.Youtube.csproj">
+      <Project>{37879387-dff4-41d0-ad26-960f22ca2c1d}</Project>
+      <Name>Dongkeun.AutomaticPlaylist.Crawler.Youtube</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

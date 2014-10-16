@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dongkeun.AutomaticPlaylist.TestBench", "Dongkeun.AutomaticPlaylist.TestBench\Dongkeun.AutomaticPlaylist.TestBench.csproj", "{17BBFA9F-4BEF-4079-8FB3-8106DCEDBBF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dongkeun.AutomaticPlaylist.Crawler.Naver", "Dongkeun.AutomaticPlaylist.NaverCrawler\Dongkeun.AutomaticPlaylist.Crawler.Naver.csproj", "{06A55CAD-B698-49BA-B939-FA72ED687403}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dongkeun.AutomaticPlaylist.Log", "Dongkeun.AutomaticPlaylist.Log\Dongkeun.AutomaticPlaylist.Log.csproj", "{8FFFDD79-3C0C-4DE9-B55B-28D100A398B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dongkeun.AutomaticPlaylist.Parser.Naver", "Dongkeun.AutomaticPlaylist.Parser.Naver\Dongkeun.AutomaticPlaylist.Parser.Naver.csproj", "{00E3FFA8-2623-48F1-866A-D6375A9FC214}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dongkeun.AutomaticPlaylist.DataTypes", "Dongkeun.AutomaticPlaylist.DataTypes\Dongkeun.AutomaticPlaylist.DataTypes.csproj", "{AA52FA2D-8B43-4BAC-9352-E4D782952131}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dongkeun.AutomaticPlaylist.Retriever.Naver", "Dongkeun.AutomaticPlaylist.Retriever.Naver\Dongkeun.AutomaticPlaylist.Retriever.Naver.csproj", "{8E5EC643-7C15-4200-8A83-FA8DAF22228F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dongkeun.AutomaticPlaylist.Crawler.Youtube", "Dongkeun.AutomaticPlaylist\Dongkeun.AutomaticPlaylist.Crawler.Youtube.csproj", "{37879387-DFF4-41D0-AD26-960F22CA2C1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dongkeun.AutomaticPlaylist.Parser.Youtube", "Dongkeun.AutomaticPlaylist.Parser.Youtube\Dongkeun.AutomaticPlaylist.Parser.Youtube.csproj", "{0D75127C-8084-462B-BD52-EB49B12CB14E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dongkeun.AutomaticPlaylist.Helper", "Dongkeun.AutomaticPlaylist.Helper\Dongkeun.AutomaticPlaylist.Helper.csproj", "{20BA3F12-090D-405B-9E63-D12559239B29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dongkeun.AutomaticPlaylist.Retriever.Youtube", "Dongkeun.AutomaticPlaylist.Retriever.Youtube\Dongkeun.AutomaticPlaylist.Retriever.Youtube.csproj", "{962C1F25-07B1-47AE-BE8D-E1BF24600427}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17BBFA9F-4BEF-4079-8FB3-8106DCEDBBF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17BBFA9F-4BEF-4079-8FB3-8106DCEDBBF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17BBFA9F-4BEF-4079-8FB3-8106DCEDBBF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17BBFA9F-4BEF-4079-8FB3-8106DCEDBBF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06A55CAD-B698-49BA-B939-FA72ED687403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06A55CAD-B698-49BA-B939-FA72ED687403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06A55CAD-B698-49BA-B939-FA72ED687403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06A55CAD-B698-49BA-B939-FA72ED687403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FFFDD79-3C0C-4DE9-B55B-28D100A398B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FFFDD79-3C0C-4DE9-B55B-28D100A398B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FFFDD79-3C0C-4DE9-B55B-28D100A398B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FFFDD79-3C0C-4DE9-B55B-28D100A398B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00E3FFA8-2623-48F1-866A-D6375A9FC214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E3FFA8-2623-48F1-866A-D6375A9FC214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00E3FFA8-2623-48F1-866A-D6375A9FC214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E3FFA8-2623-48F1-866A-D6375A9FC214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA52FA2D-8B43-4BAC-9352-E4D782952131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA52FA2D-8B43-4BAC-9352-E4D782952131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA52FA2D-8B43-4BAC-9352-E4D782952131}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA52FA2D-8B43-4BAC-9352-E4D782952131}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E5EC643-7C15-4200-8A83-FA8DAF22228F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E5EC643-7C15-4200-8A83-FA8DAF22228F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E5EC643-7C15-4200-8A83-FA8DAF22228F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E5EC643-7C15-4200-8A83-FA8DAF22228F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37879387-DFF4-41D0-AD26-960F22CA2C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37879387-DFF4-41D0-AD26-960F22CA2C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37879387-DFF4-41D0-AD26-960F22CA2C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37879387-DFF4-41D0-AD26-960F22CA2C1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D75127C-8084-462B-BD52-EB49B12CB14E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D75127C-8084-462B-BD52-EB49B12CB14E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D75127C-8084-462B-BD52-EB49B12CB14E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D75127C-8084-462B-BD52-EB49B12CB14E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20BA3F12-090D-405B-9E63-D12559239B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20BA3F12-090D-405B-9E63-D12559239B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20BA3F12-090D-405B-9E63-D12559239B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20BA3F12-090D-405B-9E63-D12559239B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{962C1F25-07B1-47AE-BE8D-E1BF24600427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{962C1F25-07B1-47AE-BE8D-E1BF24600427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{962C1F25-07B1-47AE-BE8D-E1BF24600427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{962C1F25-07B1-47AE-BE8D-E1BF24600427}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
