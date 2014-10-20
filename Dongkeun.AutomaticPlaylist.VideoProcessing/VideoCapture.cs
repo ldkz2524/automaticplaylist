@@ -44,20 +44,32 @@ namespace Dongkeun.AutomaticPlaylist.VideoProcessing
         public VideoCapture(string link)
         {
             this.Link = link;
+            try
+            {
+                IEnumerable<VideoInfo> videoInfos = DownloadUrlResolver.GetDownloadUrls(link, false);
 
-            IEnumerable<VideoInfo> videoInfos = DownloadUrlResolver.GetDownloadUrls(link, false);
+                Video = videoInfos.First(info => info.VideoType == VideoType.Mp4 && info.Resolution == 360);
 
-            Video = videoInfos.First(info => info.VideoType == VideoType.Mp4 && info.Resolution == 360);
-
-            if (Video.RequiresDecryption)
-                DownloadUrlResolver.DecryptDownloadUrl(Video);
+                if (Video.RequiresDecryption)
+                    DownloadUrlResolver.DecryptDownloadUrl(Video);
+            }
+            catch (Exception e)
+            {
+                this.Link = string.Empty;
+                Logger.RecordError(e.ToString() + " : " + link);
+            }
 
             FilePath = string.Empty;
         }
 
         ~VideoCapture()
         {
-            System.IO.File.Delete(FilePath);
+            try
+            {
+                if (FilePath != string.Empty)
+                    System.IO.File.Delete(FilePath);
+            }
+            catch { }
         }
 
         private Image<Bgr, Byte> GetVideoFrame(Capture capture, double frameNum)
@@ -75,22 +87,37 @@ namespace Dongkeun.AutomaticPlaylist.VideoProcessing
 
         public void DownloadVideo()
         {
-            FilePath = Path.Combine(TempPath, RemoveIllegalPathCharacters(this.Link.Substring(this.Link.IndexOf("?")) + Video.VideoExtension));
+            if (this.Link == string.Empty)
+                return;
 
-            VideoDownloader videoDownloader = new VideoDownloader(Video, FilePath);
+            try
+            {
+                this.FilePath = Path.Combine(TempPath, RemoveIllegalPathCharacters(this.Link.Substring(this.Link.IndexOf("?")) + Video.VideoExtension));
 
-            videoDownloader.Execute();
+                VideoDownloader videoDownloader = new VideoDownloader(Video, this.FilePath);
+
+                videoDownloader.Execute();
+            }
+            catch (Exception e)
+            {
+                Logger.RecordError(e.ToString() + " : " + this.FilePath + " : " + this.Link);
+                this.FilePath = string.Empty;
+                this.Link = string.Empty;
+            }
         }
 
         public bool IsSong(int numOfFramesToCheck)
         {
+            if (numOfFramesToCheck <= 1)
+                return false;
+
+            if (FilePath == string.Empty)
+                return false;
+
             try
             {
                 using (Capture capture = new Capture(FilePath))
                 {
-                    if (numOfFramesToCheck <= 1)
-                        return false;
-
                     List<Image> imageList = new List<Image>();
                     double totalFrames = capture.GetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_COUNT);
 

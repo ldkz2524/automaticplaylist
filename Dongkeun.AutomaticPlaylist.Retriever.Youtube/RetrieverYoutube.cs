@@ -16,8 +16,6 @@ namespace Dongkeun.AutomaticPlaylist.Retriever.Youtube
     {
         public const int NumberOfFramesToCheck = 5;
 
-        public const int NumberOfYoutubeVideosToCheck = 10;
-
         private const string youtubeSearchBaseUrl = @"http://www.youtube.com/results?search_query=";
 
         /// <summary>
@@ -40,22 +38,17 @@ namespace Dongkeun.AutomaticPlaylist.Retriever.Youtube
         /// </summary>
         /// <param name="candidateVideoList">list of videos to search music from</param>
         /// <returns></returns>
-        public List<YoutubeVideoInformation> RetrieveSongList(List<YoutubeVideoInformation> candidateVideoList)
+        public YoutubeVideoInformation RetrieveSongList(List<YoutubeVideoInformation> candidateVideoList)
         {
-            List<YoutubeVideoInformation> newVideoList = new List<YoutubeVideoInformation>();
-
             for (int i = 0; i < candidateVideoList.Count; i++)
             {
                 VideoCapture video = new VideoCapture(candidateVideoList[i].Url);
                 video.DownloadVideo();
                 if (video.IsSong(NumberOfFramesToCheck) == true)
-                    newVideoList.Add(candidateVideoList[i]);
-
-                if (i == NumberOfYoutubeVideosToCheck)
-                    break;
+                    return candidateVideoList[i];
             }
 
-            return newVideoList;
+            return new YoutubeVideoInformation();
 
         }
     }

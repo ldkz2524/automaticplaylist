@@ -28,15 +28,6 @@ namespace Dongkeun.AutomaticPlaylist.Parser.Youtube
             string titleStartKey = "title=\"";
             string titleEndKey = "\"";
 
-            string channelContextStartKey = "<ul class=\"yt-lockup-meta-info\"><li>";
-            string channelContextEndKey = "</li>";
-
-            string channelStartKey = ">";
-            string channelEndKey = "</a>";
-
-            string viewCountStartKey = "ago</li><li>";
-            string viewCountEndKey = "views</li>";
-
             string officialBadgeKey = "<span class=\"yt-badge \" >Official</span>";
 
             inputHtml = HttpUtility.HtmlDecode(inputHtml);
@@ -51,35 +42,13 @@ namespace Dongkeun.AutomaticPlaylist.Parser.Youtube
 
                 string title = HelperParser.RetrieveParsedString(titleContext, titleStartKey, titleEndKey);
 
-                string channelContext = HelperParser.RetrieveParsedString(ref resultContext, channelContextStartKey, channelContextEndKey);
-
-                string channel = HelperParser.RetrieveParsedString(channelContext, channelStartKey, channelEndKey);
-
-                string viewCount = HelperParser.RetrieveParsedString(ref resultContext, viewCountStartKey, viewCountEndKey);
-
-                if (viewCount == "No")
-                    viewCount = "0";
-
-                Boolean isOfficial = false;
-
-                if (resultContext.IndexOf(titleContextStartKey) == -1)
-                {
-                    if (resultContext.IndexOf(officialBadgeKey) != -1)
-                        isOfficial = true;
-                }
-                else 
-                {
-                    if (resultContext.IndexOf(titleContextStartKey) > resultContext.IndexOf(officialBadgeKey) && resultContext.IndexOf(officialBadgeKey) != -1)
-                        isOfficial = true;
-                }
-
                 try
                 {
-                    newVideoList.Add(new YoutubeVideoInformation(title, channel, int.Parse(viewCount,System.Globalization.NumberStyles.AllowThousands), isOfficial, url));
+                    newVideoList.Add(new YoutubeVideoInformation(title, url));
                 }
                 catch (Exception e)
                 {
-                    Logger.RecordError(e.ToString() + " : " + title + " : " + channel + " : " + viewCount + " : " + isOfficial + " : " + url);
+                    Logger.RecordError(e.ToString() + " : " + title + " : "  + url);
                 }
             }
 

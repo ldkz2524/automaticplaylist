@@ -28,13 +28,9 @@ namespace Dongkeun.AutomaticPlaylist.TestBench
             {
                 List<YoutubeVideoInformation> youtubeVideoList = new RetrieverYoutube().RetrieveVideoList(song.Title + " - " + song.Artist);
 
-                List<YoutubeVideoInformation> youtubeSongList = new RetrieverYoutube().RetrieveSongList(youtubeVideoList);
+                YoutubeVideoInformation youtubeSong = new RetrieverYoutube().RetrieveSongList(youtubeVideoList);
 
-                foreach (YoutubeVideoInformation youtubeSong in youtubeSongList)
-                {
-                    Console.WriteLine(youtubeSong.Title + " : " + youtubeSong.Channel + " : " + youtubeSong.ViewCount + " : " + youtubeSong.Url);
-                }
-                Console.WriteLine("------------------------");
+                Console.WriteLine(youtubeSong.Title + " : " + youtubeSong.Url);
             }
 
             Console.Read();
