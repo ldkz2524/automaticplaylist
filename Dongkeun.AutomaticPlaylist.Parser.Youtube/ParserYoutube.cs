@@ -57,6 +57,9 @@ namespace Dongkeun.AutomaticPlaylist.Parser.Youtube
 
                 string viewCount = HelperParser.RetrieveParsedString(ref resultContext, viewCountStartKey, viewCountEndKey);
 
+                if (viewCount == "No")
+                    viewCount = "0";
+
                 Boolean isOfficial = false;
 
                 if (resultContext.IndexOf(titleContextStartKey) == -1)

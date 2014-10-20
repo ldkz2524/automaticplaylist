@@ -12,6 +12,7 @@ using Dongkeun.AutomaticPlaylist.DataTypes;
 using Dongkeun.AutomaticPlaylist.Retriever.Naver;
 using Dongkeun.AutomaticPlaylist.Retriever.Youtube;
 using Dongkeun.AutomaticPlaylist.Crawler.Youtube;
+using Dongkeun.AutomaticPlaylist.VideoProcessing;
 
 namespace Dongkeun.AutomaticPlaylist.TestBench
 {
@@ -19,22 +20,22 @@ namespace Dongkeun.AutomaticPlaylist.TestBench
     {
         static void Main(string[] args)
         {
-            string url = @"http://music.naver.com/listen/top100.nhn?domain=TOTAL&duration=1h";
-            string youtubeUrl = @"http://www.youtube.com/results?search_query=%EB%82%B4+%EB%A7%88%EC%9D%8C%EC%9D%B4+%EB%AD%90%EA%B0%80+%EB%8F%BC";
+            string naverMusicUrl = @"http://music.naver.com/listen/top100.nhn?domain=TOTAL&duration=1h";
 
-            List<SongInformation> naverSongList = new RetrieverNaver().RetrieveSongList(url);
-
-            List<YoutubeVideoInformation> youtubeVideoList = new RetrieverYoutube().RetrieveVideoList(youtubeUrl);
+            List<SongInformation> naverSongList = new RetrieverNaver().RetrieveSongList(naverMusicUrl);
 
             foreach (SongInformation song in naverSongList)
             {
-                Console.WriteLine(song.Rank + " : " + song.Title + " : " + song.Artist);
-            }
+                List<YoutubeVideoInformation> youtubeVideoList = new RetrieverYoutube().RetrieveVideoList(song.Title + " - " + song.Artist);
 
-            //foreach (YoutubeVideoInformation video in youtubeVideoList)
-            //{
-            //    Console.WriteLine(video.Title + " : " + video.Channel + " : " + video.ViewCount + " : " + video.IsOfficial + " : " + video.Url);
-            //}
+                List<YoutubeVideoInformation> youtubeSongList = new RetrieverYoutube().RetrieveSongList(youtubeVideoList);
+
+                foreach (YoutubeVideoInformation youtubeSong in youtubeSongList)
+                {
+                    Console.WriteLine(youtubeSong.Title + " : " + youtubeSong.Channel + " : " + youtubeSong.ViewCount + " : " + youtubeSong.Url);
+                }
+                Console.WriteLine("------------------------");
+            }
 
             Console.Read();
         }

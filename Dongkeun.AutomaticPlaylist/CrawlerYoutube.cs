@@ -17,7 +17,7 @@ namespace Dongkeun.AutomaticPlaylist.Crawler.Youtube
             set;
         }
 
-        public CrawlerYoutube(int timeOut = 3000)
+        public CrawlerYoutube(int timeOut = 30000)
         {
             this.TimeOut = timeOut;
         }

@@ -17,7 +17,7 @@ namespace Dongkeun.AutomaticPlaylist.Crawler.Naver
             set;
         }
 
-        public CrawlerNaver(int timeOut = 3000)
+        public CrawlerNaver(int timeOut = 30000)
         {
             this.TimeOut = timeOut;
         }

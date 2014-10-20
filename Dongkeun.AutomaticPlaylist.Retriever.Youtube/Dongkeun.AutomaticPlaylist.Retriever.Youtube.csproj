@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +55,10 @@
     <ProjectReference Include="..\Dongkeun.AutomaticPlaylist.Parser.Youtube\Dongkeun.AutomaticPlaylist.Parser.Youtube.csproj">
       <Project>{0d75127c-8084-462b-bd52-eb49b12cb14e}</Project>
       <Name>Dongkeun.AutomaticPlaylist.Parser.Youtube</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dongkeun.AutomaticPlaylist.VideoProcessing\Dongkeun.AutomaticPlaylist.VideoProcessing.csproj">
+      <Project>{f6ebd902-c5e4-4846-8630-4ea392a47147}</Project>
+      <Name>Dongkeun.AutomaticPlaylist.VideoProcessing</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dongkeun.AutomaticPlaylist\Dongkeun.AutomaticPlaylist.Crawler.Youtube.csproj">
       <Project>{37879387-dff4-41d0-ad26-960f22ca2c1d}</Project>

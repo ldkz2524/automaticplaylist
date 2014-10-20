@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -79,6 +79,10 @@
     <ProjectReference Include="..\Dongkeun.AutomaticPlaylist.Retriever.Youtube\Dongkeun.AutomaticPlaylist.Retriever.Youtube.csproj">
       <Project>{962c1f25-07b1-47ae-be8d-e1bf24600427}</Project>
       <Name>Dongkeun.AutomaticPlaylist.Retriever.Youtube</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dongkeun.AutomaticPlaylist.VideoProcessing\Dongkeun.AutomaticPlaylist.VideoProcessing.csproj">
+      <Project>{f6ebd902-c5e4-4846-8630-4ea392a47147}</Project>
+      <Name>Dongkeun.AutomaticPlaylist.VideoProcessing</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dongkeun.AutomaticPlaylist\Dongkeun.AutomaticPlaylist.Crawler.Youtube.csproj">
       <Project>{37879387-dff4-41d0-ad26-960f22ca2c1d}</Project>
