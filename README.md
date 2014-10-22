@@ -7,6 +7,8 @@ There are some open sourced libraries i have used, but i will update the details
 
 Remaining Works:
 	Adding songs back to youtube playlist
+	Interfaces to be made for parser, crawler, retriever for maintainability
+	documentation for future uses
 
 Know issues:
 	Parsing is still an issue for some songs (more testing needed)
